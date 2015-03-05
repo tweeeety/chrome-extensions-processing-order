@@ -1,0 +1,26 @@
+{
+  "name": "processing order",
+  "version": "0.1",
+  "manifest_version": 2,
+  
+  "description": "processing order",
+  
+  "permissions" : [
+    "tabs", "file://*/*", "http://*/*", "https://*/*", "contextMenus"
+  ],
+  
+  "background" : {
+    "scripts" : ["background.js"]
+  },
+  "browser_action" : {
+    "default_title" : "processing order"
+    ,"default_popup" : "popup.html"
+  }
+  ,
+  "content_scripts": [
+    {
+      "matches" : ["file://*/*", "http://*/*", "https://*/*"],
+      "js" : ["content.js"]
+    }
+  ]
+}
